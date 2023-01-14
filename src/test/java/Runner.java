@@ -3,6 +3,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 public class Runner extends Setup {
@@ -22,5 +23,10 @@ public class Runner extends Setup {
         driver.get(baseUrl);
         PMI page = new PMI(driver);
         page.CreateUser();
+
+        String actualResult = driver.findElements(By.className("oxd-text")).get(12).getText();
+        String expectedResult = "Irfanul Emon";
+
+        Assert.assertEquals(actualResult,expectedResult);
     }
 }

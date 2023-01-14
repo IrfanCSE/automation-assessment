@@ -27,15 +27,15 @@ public class PMI {
         input.get(2).sendKeys("Hasan");
         input.get(3).sendKeys("Emon");
 
-        Thread.sleep(2000);
-
         List<WebElement> radio_btn = _driver.findElements(By.className("oxd-switch-wrapper"));
         radio_btn.get(0).click();
 
+        Thread.sleep(2000);
+
         List<WebElement> input_ext = _driver.findElements(By.className("oxd-input"));
-        input.get(5).sendKeys("Irfan");
-        input.get(6).sendKeys("Irfan@123");
-        input.get(7).sendKeys("Irfan@123");
+        input_ext.get(5).sendKeys("Irfan");
+        input_ext.get(6).sendKeys("Irfan@123");
+        input_ext.get(7).sendKeys("Irfan@123");
 
         List<WebElement> submit = _driver.findElements(By.className("oxd-button"));
         submit.get(1).click();
