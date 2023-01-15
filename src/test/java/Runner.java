@@ -21,12 +21,18 @@ public class Runner extends Setup {
     @Test(priority = 2)
     public void CreateUser() throws InterruptedException{
         driver.get(baseUrl);
-        PMI page = new PMI(driver);
+        PIMPage page = new PIMPage(driver);
         page.CreateUser();
 
-        String actualResult = driver.findElements(By.className("oxd-text")).get(12).getText();
-        String expectedResult = "Irfanul Emon";
+        Thread.sleep(10000);
 
-        Assert.assertEquals(actualResult,expectedResult);
+         List<WebElement> responses = driver.findElements(By.className("oxd-text--h6"));
+        String actualResult_1 = responses.get(1).getText();
+        String actualResult_2 = responses.get(2).getText();
+        String expectedResult_1 = "Irfanul Emon";
+        String expectedResult_2 = "Personal Details";
+
+        Assert.assertEquals(actualResult_1,expectedResult_1);
+        Assert.assertEquals(actualResult_2,expectedResult_2);
     }
 }

@@ -5,9 +5,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class PMI {
+public class PIMPage {
     private WebDriver _driver;
-    public PMI(WebDriver driver){
+    public PIMPage(WebDriver driver){
         PageFactory.initElements(driver, this);
         _driver=driver;
     }
@@ -39,6 +39,5 @@ public class PMI {
 
         List<WebElement> submit = _driver.findElements(By.className("oxd-button"));
         submit.get(1).click();
-
     }
 }
